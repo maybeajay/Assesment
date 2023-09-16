@@ -1,0 +1,29 @@
+{
+  "Users": [
+    {
+      "id": "1",
+      "fname": "captain",
+      "lname": "singh",
+      "email": "captain@work.com",
+      "mobileNo": "1234",
+      "address1": "New York",
+      "address2": "nothing",
+      "name": "vijay",
+      "country": "India",
+      "state": "Punjab",
+      "zip": 162861
+    },
+    {
+      "fname": "iron",
+      "lname": "man",
+      "email": "iron@man.com",
+      "mobileNo": "6239845615",
+      "address1": "sec 15, panchkula, Haryana",
+      "address2": "ashdahdoahsd",
+      "country": "United States",
+      "state": "New York",
+      "zip": "789654",
+      "id": "XxTWx59"
+    }
+  ]
+}
