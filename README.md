@@ -1,7 +1,5 @@
 # Steps to run the web app
 ### In the IDE most probably VS Code
-### open up two terminals one is for React 
-### in the second terminal run this command json-server  db2.json -p 8080 
 ### make sure to copy paste above command
 ### now run npm start we can use CRUD operation on the web app 
 # Tech Stack I am using
