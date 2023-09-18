@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const api_url = "https://usersapi-feyn.onrender.com/Users";
+const api_url = "https://usersapi-feyn.onrender.com/";
 export const userApi = createApi({
   reducerPath: "Users",
   baseQuery: fetchBaseQuery({ baseUrl: api_url }),
