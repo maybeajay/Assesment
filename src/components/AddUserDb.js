@@ -13,10 +13,12 @@ export default function AddUser() {
     address2:"",
     zip: ""
   });
+  const [errorMsg, setErrorMSg]=useState(false);
+  const [errorMsg2, setErrorMsg2]=useState(false);
   const [validator,setValidator]=useState({
-    phone: false,
-    emailAdd: false,
-    address: false,
+    phone: true,
+    emailAdd: true,
+    address: true,
   })
   const [selectedLocation, setSelectedLocation] = useState({
     country: null,
@@ -63,10 +65,15 @@ export default function AddUser() {
       country: selectedLocation.country ? selectedLocation.country.name : null,
       state: selectedLocation.state ? selectedLocation.state.name : null,
     };
+    if(userDetails.fname.length>=5 && userDetails.lname.length>=5){
     await addUser(userData);
-    console.log("navigating")
     navigation('/')
   }
+  else{
+    setErrorMSg(true)
+    setErrorMsg2(true);
+  }
+}
   return (
     <div className="container mx-auto max-w-full">
       <h1 className="text-center text-2xl mt-5">Add User</h1>
@@ -87,7 +94,7 @@ export default function AddUser() {
               placeholder="Jane"
               onChange={(e)=>handleUserDetails('fname', e.target.value)}
             />
-            {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
+            {errorMsg ? <p className="text-red-500 text-xs italic">First Name cannot be null & it must have 5 characters or more.</p>: null}
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label
@@ -103,6 +110,7 @@ export default function AddUser() {
               placeholder="Doe"
               onChange={(e)=>handleUserDetails('lname', e.target.value)}
             />
+            {errorMsg2 ? <p className="text-red-500 text-xs italic">Last Name cannot be null & it must have 5 characters or more.</p>: null}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -235,7 +243,7 @@ export default function AddUser() {
           </div>
           <div className="flex justify-center">
   <button className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 mt-5 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 w-60" onClick={addUserData}>
-    Update
+    Add User
   </button>
 </div>
         </div>
